@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'incoming/create'
+
   resources :topics do
     resources :bookmarks, except: [:index]
   end
 
   devise_for :users
+
+  post :incoming, to: 'incoming#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
