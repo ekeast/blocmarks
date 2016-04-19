@@ -5,6 +5,7 @@ class IncomingController < ApplicationController
     @user = User.where(email: params[:sender]).first
     @topic = @user.topics.find_or_create_by(title: params[:subject])
     @bookmark = @topic.bookmarks.new(url: params["body-plain"])
+    @bookmark.save!
 
     head 200
   end
