@@ -25,6 +25,7 @@ gem 'faker'
 gem 'chartkick'
 gem 'groupdate'
 gem 'bootstrap-sass'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug'
