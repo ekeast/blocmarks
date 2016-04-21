@@ -1,8 +1,10 @@
 class BookmarksController < ApplicationController
   before_action :set_topic
   before_action :set_bookmark, only: [:show, :edit, :destroy]
+  include Pundit
 
   def show
+    @bookmarks = Bookmark.all
   end
 
   def new

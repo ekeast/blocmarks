@@ -3,5 +3,5 @@
 <p> <%= link_to "Add New Site", new_topic_bookmark_path(@topic), method: :get %> </p>
 
 <% @topic.bookmarks.each do |bookmark| %>
-  <%= link_to bookmark.url, bookmark.url, target: "_new" %></a> | <%= link_to "Delete URL", topic_bookmark_path(@topic, bookmark), method: :delete%></br>
+  <%= link_to bookmark.url, bookmark.url, target: "_new" %></a> | <%= link_to "Delete URL", topic_bookmark_path(@topic, bookmark), method: :delete%></br> <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
 <% end %>
