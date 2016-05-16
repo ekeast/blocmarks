@@ -1,0 +1,10 @@
+<h1>Profile Page</h1>
+<h3>Your Bookmarks</h3>
+<% @user_bookmarks.each do |bookmark| %>
+  <%= link_to bookmark.url, bookmark.url, target: "_new" %></br>
+<% end %>
+
+<h3>Liked Bookmarks</h3>
+<% @liked_bookmarks.each do |bookmark| %>
+  <%= link_to bookmark.url, bookmark.url, target: "_new" %></br>
+<% end %>

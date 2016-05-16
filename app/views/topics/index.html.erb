@@ -1,0 +1,6 @@
+<h1>Topics</h1>
+<h3> <%= link_to "Add a New Topic", new_topic_path, method: :get %> </h3>
+
+<% @topics.each do |topic| %>
+  <%= link_to topic.title, topic_path(topic), method: :get %> | <%= link_to "Delete Topic", topic_path(topic), method: :delete %></br>
+<% end %>
